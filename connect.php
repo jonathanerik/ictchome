@@ -12,9 +12,9 @@ $newstitle = filter_input(INPUT_POST, 'title');
 $author = filter_input(INPUT_POST, 'author');
 $content = filter_input(INPUT_POST, 'content');
  if (!empty($newstitle)){
-$host = "localhost";
-$dbusername = "root";
-$dbpassword = "";
+$host = "ictchome.mysql.database.azure.com";
+$dbusername = "ictchome@ictchome";
+$dbpassword = "P@ssw0rd";
 $dbname = "News and Events";
 
 // Create connection

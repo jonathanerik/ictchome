@@ -7,7 +7,7 @@
 	}
 	
 	$database_name = "News and Events";
-	$con = mysqli_connect("localhost","root","", $database_name);
+	$con = mysqli_connect("ictchome.mysql.database.azure.com","ictchome@ictchome","", $database_name);
 	
 	
 ?>
