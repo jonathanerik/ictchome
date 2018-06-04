@@ -1,4 +1,0 @@
-                                                                <option <?php echo $row["status"] == 'Approved' ? 'selected' : '""'  ?> value ="Approved">Approved</option>
-                                                                <option <?php echo $row["status"] == 'Completed' ? 'selected' : '""'  ?> value ="Completed">Completed</option>
-
-                                                                <option value="<?php echo $rows['username'];?>"></option>
