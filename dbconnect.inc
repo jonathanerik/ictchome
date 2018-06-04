@@ -6,7 +6,7 @@
 	$username='ictchome@ictchome';
 	$password='P@ssw0rd';
 	$conn=mysql_connect($hostname, $username, $password) 
-		or die ('Error connnecting to mysql');mysql_select_db('ictc');
+		or die ('Error connnectingfghgfh to mysql');mysql_select_db('ictc');
 
  ?>
 
