@@ -1,0 +1,17 @@
+                <div class="col-md-6 mb-3">
+                    <label for="confirm password">Confirm password</label>
+                    <input type="password" class="form-control" name="password" placeholder="Confirm Password" value="" required>
+                    <div class="invalid-feedback">
+                    Password not Same
+                    </div>
+                </div>
+
+                <div class="col-6 mb-3">
+                    <label for="Usertype">Select User type</label>
+                    <select class="custom-select" name="Usertype">
+                        <option value="Requestor">Requestor</option>
+                        <option value="Superior">Superior</option>
+                        <option value="ICTC">ICTC</option>
+                        <option value="Technician">Technician</option>
+                    </select>
+                </div>

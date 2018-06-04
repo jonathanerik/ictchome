@@ -1,0 +1,307 @@
+<?php include '../../class/Config.php';?>
+<?php 
+$id = $_SESSION['id'];
+$data->restriction_before_login($id);
+?>
+
+<?php foreach($data->get_user_info_by_id($id) as $row){}?>
+<?php foreach($data->get_site_information() as $row1) {}?>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title><?=$row1['site_title']?></title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.6 -->
+    <link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../../assets/dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="../../assets/dist/css/skins/skin-blue.min.css">
+    <!-- amaran -->
+    <link rel="stylesheet" href="../../assets/amaran/css/amaran.min.css">
+    <link rel="stylesheet" href="../../assets/amaran/css/animate.min.css">
+    <!-- data tables -->
+    <link href="../../assets/plugins/datatables/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
+    <link href="../../assets/plugins/datatables/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet">
+    <link href="../../assets/plugins/datatables/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" rel="stylesheet">
+    <link href="../../assets/plugins/datatables/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet">
+    <link href="../../assets/plugins/datatables/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">
+    <style>
+    @font-face {
+    font-family: "BASKVILL";
+    src: url("../../assets/font/BASKVILL.TTF");
+    }  body { font-size:16px; }
+
+    </style>
+</head>
+<body class="hold-transition skin-blue sidebar-mini" style="font-family: BASKVILL">
+<div class="wrapper">
+
+
+  <!-- Main Header -->
+  <header class="main-header">
+
+    <!-- Logo -->
+    <a class="logo" >
+      <!-- mini logo for sidebar mini 50x50 pixels -->
+      <span style="font-family: BASKVILL" class="logo-mini"><?=$row1['site_name_mini']?></span>
+      <!-- logo for regular state and mobile devices -->
+      <span style="font-family: BASKVILL" class="logo-lg"><?=$row1['site_name']?></span>
+      
+    </a>
+  
+
+    <nav class="navbar navbar-static-top">
+    <!-- Sidebar toggle button-->
+    <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </a>
+
+    <div class="navbar-custom-menu">
+      <ul class="nav navbar-nav">
+        <!-- User Account: style can be found in dropdown.less -->
+        <li class="dropdown user user-menu">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <img src="../../assets/uploads/<?=$row['image']?>" class="user-image" alt="User Image">
+            <span class="hidden-xs"><?=$row['fullname']?></span>
+          </a>
+          <ul class="dropdown-menu">
+            <!-- User image -->
+            <li class="user-header">
+              <img src="../../assets/uploads/<?=$row['image']?>" class="img-circle" alt="User Image">
+
+              <p>
+                <?=$row['fullname']?>
+                <small>Administrator / Dentist</small>
+              </p>
+            </li>
+            <!-- Menu Footer-->
+            <li class="user-footer">
+              <div class="pull-left">
+                <a href="profile.php" class="btn btn-default btn-flat">Profile</a>
+              </div>
+              <div class="pull-right">
+                <a href="logout.php" class="btn btn-default btn-flat">Sign out</a>
+              </div>
+            </li>
+          </ul>
+        </li>
+       
+      </ul>
+    </div>
+  </nav>
+  </header>
+  <!-- Left side column. contains the logo and sidebar -->
+  <aside class="main-sidebar">
+
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+      <!-- Sidebar Menu -->
+      <ul class="sidebar-menu">
+        <!-- Optionally, you can add icons to the links -->
+        <li><a href="dashboard.php"><i class="glyphicon glyphicon-dashboard"></i> <span>Dashboard</span></a></li>
+        <li><a href="patients.php"><i class="glyphicon glyphicon-user"></i> <span>Patients</span></a></li>
+        <li><a href="schedule.php"><i class="glyphicon glyphicon-pushpin"></i> <span>Schedule</span></a></li>
+        <li class="active"><a href="reports.php"><i class="glyphicon glyphicon-stats"></i> <span>Reports</span></a></li>
+        <li class="treeview">
+          <a href="#">
+            <i class="glyphicon glyphicon-cog"></i> <span>Control Panel</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="site_information.php"><i class="fa fa-circle-o"></i> Site Information</a></li>
+            <li><a href="sliders.php"><i class="fa fa-circle-o"></i> Sliders</a></li>
+            <li><a href="services.php"><i class="fa fa-circle-o"></i> Services</a></li>
+            <li><a href="gallery.php"><i class="fa fa-circle-o"></i> Gallery</a></li>
+            <li><a href="logs.php"><i class="fa fa-circle-o"></i> Logs</a></li>
+          </ul>
+        </li>
+      </ul>
+      <!-- /.sidebar-menu -->
+    </section>
+    <!-- /.sidebar -->
+  </aside>
+
+
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+       <i class="glyphicon glyphicon-stats"></i> Reports
+      </h1>
+       <ol class="breadcrumb">
+        <li><a href="dashboard.php"> Dashboard</a></li>
+        <li class="active"><a href="reports.php"> Reports</a></li>
+      </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+
+    <div class="row">
+        <div class="col-md-12">
+          <div class="box">
+            <div class="box-body">
+              <div class="row">
+                <div class="col-md-12">
+                
+                     <!-- start -->
+                     <table id="datatable-buttons" class="table table-striped table-bordered">
+                     <thead>
+                     <tr>
+                         <th>#</th>
+                         <th>Account #</th>
+                         <th>Name</th>
+                         <th>Contact</th>
+                         <th>Age</th>
+                         <th>Service</th>
+                         <th>Price</th>
+                         <th>Date</th>
+                     </tr>
+                     </thead>
+                     <tbody>
+                         <?php $i=1; foreach($data->reports() as $rrow):?>
+                          <tr>
+                            <td><?=$i++?></td>
+                            <td><?='RGC'.str_pad($rrow['id'], 5, '0', STR_PAD_LEFT) . PHP_EOL;?></td>
+                            <td><?=$rrow['fullname']?></td>
+                            <td><?=$rrow['contact']?></td>
+                            <td><?=$rrow['age']?></td>
+                            <td><?=$rrow['purpose']?></td>
+                            <td>?<?=@number_format($rrow['price'],2)?></td>
+                            <td><?=date('F d, Y', strtotime($rrow['date']))?></td>
+                          </tr>
+                         <?php endforeach;?>
+                     </tbody>
+                     <tfoot>
+                         <tr>
+                          <th>#</th>
+                          <th>Account #</th>
+                          <th>Name</th>
+                          <th>Contact</th>
+                          <th>Age</th>
+                          <th>Service</th>
+                          <th>Price</th>
+                          <th>Date</th>
+                         </tr>
+                     </tfoot>
+                 </table>
+                </div>
+              </div>
+              <!-- /.row -->
+            </div>
+            <!-- ./box-body -->
+            
+          </div>
+          <!-- /.box -->
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  <!-- Main Footer -->
+  <footer class="main-footer">
+    <!-- Default to the left -->
+    <?=$row1['site_footer']?>
+  </footer>
+
+  
+  <!-- Add the sidebar's background. This div must be placed
+       immediately after the control sidebar -->
+  <div class="control-sidebar-bg"></div>
+</div>
+<!-- ./wrapper -->
+
+<!-- REQUIRED JS SCRIPTS -->
+
+<!-- jQuery 2.2.3 -->
+<script src="../../assets/plugins/jQuery/jquery-2.2.3.min.js"></script>
+<!-- Bootstrap 3.3.6 -->
+<script src="../../assets/bootstrap/js/bootstrap.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../../assets/dist/js/app.min.js"></script>
+<!-- angular  -->
+<script src="../../assets/angular/1.4.8.angular.min.js"></script>
+<script src="../../assets/angular/1.4.2.angular.min.js"></script>
+<!-- ajax functions  -->
+<script src="../../assets/functions/functions.js"></script>
+<!-- amaran -->
+<script src="../../assets/amaran/js/jquery.amaran.min.js"></script>
+
+
+<script type="text/javascript" src="../../assets/dist/js/jquery.timepicker.min.js"></script>
+<script type="text/javascript" src="../../assets/dist/js/jquery.datepair.min.js"></script>
+<!-- DataTables -->
+<script src="../../assets/plugins/datatables/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="../../assets/plugins/datatables/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<script src="../../assets/plugins/datatables/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+<script src="../../assets/plugins/datatables/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+<script src="../../assets/plugins/datatables/datatables.net-buttons/js/buttons.flash.min.js"></script>
+<script src="../../assets/plugins/datatables/pdfmake.min.js"></script>
+<script src="../../assets/plugins/datatables/vfs_fonts.js"></script>
+<script src="../../assets/plugins/datatables/datatables.net-buttons/js/buttons.html5.min.js"></script>
+<script src="../../assets/plugins/datatables/datatables.net-buttons/js/buttons.print.min.js"></script>
+<script src="../../assets/plugins/datatables/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
+<script src="../../assets/plugins/datatables/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
+<script src="../../assets/plugins/datatables/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+<script src="../../assets/plugins/datatables/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
+<script src="../../assets/plugins/datatables/datatables.net-scroller/js/dataTables.scroller.min.js"></script>
+<script>
+var app = angular.module('app', ['ngMessages']);
+
+
+$(document).ready(function() {
+        var handleDataTableButtons = function() {
+          if ($("#datatable-buttons").length) {
+            $("#datatable-buttons").DataTable({
+              dom: "Bfrtip",
+              buttons: [
+                {
+                  extend: "csv",
+                  className: "btn-sm"
+                },
+                {
+                  extend: 'pdfHtml5',
+                  className: "btn-sm"
+                },
+              ],
+              responsive: true
+            });
+          }
+        };
+
+        TableManageButtons = function() {
+          "use strict";
+          return {
+            init: function() {
+              handleDataTableButtons();
+            }
+          };
+        }();
+
+        $('#datatable').dataTable();
+
+
+        TableManageButtons.init();
+      });
+</script>
+</body>
+</html>
