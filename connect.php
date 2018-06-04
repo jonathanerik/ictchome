@@ -12,8 +12,8 @@ $newstitle = filter_input(INPUT_POST, 'title');
 $author = filter_input(INPUT_POST, 'author');
 $content = filter_input(INPUT_POST, 'content');
  if (!empty($newstitle)){
-$host = "ictchome.mysql.database.azure.com";
-$dbusername = "ictchome@ictchome";
+$host = "oprosys-mysqldbserver.mysql.database.azure.com";
+$dbusername = "akashil@oprosys-mysqldbserver";
 $dbpassword = "P@ssw0rd";
 $dbname = "News and Events";
 
