@@ -9,7 +9,7 @@ $username=$_POST['username'];
 $password=$_POST['password'];
 $query1="SELECT * FROM admin WHERE username='$username' AND password='$password'";
 
-$result1= mysql_query($query1) or die(mysql_error($conn));
+$result1= mysql_query($query1) ;
 $count1= mysql_num_rows($result1);
 
 if ($count1 == 1){
